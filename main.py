@@ -11,14 +11,11 @@ if __name__== '__main__':
     st.markdown('# Memefy any text you like')
     text = st.text_input("Give me a text to memify:\n")
     meme_txt=[]
-    for let in text:
-        low_or_high=random.randint(0,1)
-        if let.isspace()==False:
-            if low_or_high==0:
-                meme_txt.append(let.lower())
-            else:
-                meme_txt.append(let.upper())
+    higher = text.upper()
+    lower = text.lower()
+    for i in range(len(text)):
+        if i%2==0:
+            meme_txt.append(lower[i])
         else:
-            meme_txt.append(' ')
-    memetext = ''.join(meme_txt)
-    st.write(f'Memed Word: {memetext}')
+            meme_txt.append(higher[i])
+    st.write(f'Memed Word: {meme_txt}')
